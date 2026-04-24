@@ -1,0 +1,13 @@
+@use '_variables' as v;
+@layer regions {
+    body {
+        display: grid;
+        overflow: hidden;
+        width: 100vw;
+        max-width: 1980px;
+        height: 100dvh;
+        margin-inline: auto;
+        background-color: v.$linen-white;
+        @media (min-width: 1920px) {box-shadow: 0 0 2rem oklch(0 0 0 / 40%);}
+    }
+}

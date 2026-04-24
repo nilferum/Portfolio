@@ -1,0 +1,28 @@
+@use '_variables' as v;
+@layer global {
+    @keyframes clipSwipe {
+        from { clip-path: inset(-50% 100% -50% 0); }
+        to   { clip-path: inset(-50% 0 -50% 0); }
+    }
+    
+    @keyframes verticalClipSwipe {
+        from { clip-path: inset(0 -50% 100% -50%); }
+        to   { clip-path: inset(0 -50% 0 -50%); }
+    }
+
+    @keyframes delayedClipSwipe {
+        0%   { clip-path: inset(-50% 100% -50% 0); }
+        34%  { clip-path: inset(-50% 100% -50% 0); }
+        100% { clip-path: inset(-50% 0 -50% 0); }
+    }
+
+    @keyframes scroll-progress {
+        from { top: 0%; }
+        to   { top: 80%; }
+    }
+
+    @keyframes title-reveal {
+        from { background-position: 0 100%; }
+        to   { background-position: 0 0%; }
+    }
+}

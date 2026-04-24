@@ -1,0 +1,118 @@
+@use '_variables' as v;
+@layer components {
+    .mail:after {
+        content: attr(data-label);
+        position: absolute;
+        top: calc(100% + 1.5rem);
+        left: 50%;
+        translate: -50% 0;
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.25rem;
+        background-image: linear-gradient(23.4deg,oklch(0.3 0.02 46.5 / 75%),oklch(0.3 0.02 136.5 / 55%));
+        box-shadow:
+            2px 2px 2px v.$ink-black-shadow,
+            -2px -2px 2px v.$ink-black-shadow;
+        @include v.eng-title (450);
+        font-size: 0.75rem;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        color: oklch(0.92 0 0);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+    }
+
+    .mail:is(:hover, :focus-visible, .is-copied)::after {opacity: 1;}
+
+    .chevron::before {
+        content: '';
+        display: block;
+        width: calc((2rem - 4px) / sqrt(2));
+        height: calc((2rem - 4px) / sqrt(2));
+        border-top: 2px solid v.$ink-black;
+        border-right: 2px solid v.$ink-black;
+        transform: rotate(45deg);
+        opacity: 0.75;
+    }
+
+    .chevron::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 4px;
+        background-color: oklch(0 0 0 / 5%);
+        box-shadow: 2px 2px 2px oklch(0 0 0 / 15%);
+        transform: translate(-0.5rem, -0.5rem);
+    }
+
+    .chevron:focus-visible::after {background-color: oklch(0.62 0.07 55 / 25%)}
+
+    .info-heading::after {
+        content: "";
+        display: block;
+        width: 0.5em;
+        height: 4em;
+        background-image: 
+            linear-gradient(to bottom, currentColor),
+            radial-gradient(circle, currentColor 50%, transparent 50%);
+        background-size:
+            1px calc(100% - 0.25em),
+            0.25em 0.25em;
+        background-position:
+            top center,
+            bottom center;
+        background-repeat: no-repeat;
+    }
+
+    .detail__button {
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            inset: 50%;
+            translate: -50% -50%;
+            display: block;
+            width: 2rem;
+            height: 1px;
+            background-color: currentColor;
+            pointer-events: none;
+        }
+        &::before {transform: rotate(45deg);}
+        &::after  {transform: rotate(-45deg);}
+    }
+
+    .info-link{
+        &::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 50%;
+        left: -1rem;
+        translate: calc(-100% - 0.5em) calc(0.5em);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 1.25rem;
+        background-image: v.$frosted-glass;
+        box-shadow: 0 0 2px v.$ink-black-shadow;
+        @include v.eng-title (450);
+        font-size: 0.75rem;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        }
+
+    &:is(:hover, :focus-visible)::after {opacity: 1;}
+    &:focus-visible::after {outline-offset: 0.5rem;}
+    }
+
+    :is(.header-link, .info-link):is(:hover, :focus-visible) img {
+        filter: brightness(0) saturate(100%) invert(51%) sepia(38%) saturate(418%) hue-rotate(341deg) brightness(92%) contrast(90%);
+        transition: filter 0.12s;
+    }
+}

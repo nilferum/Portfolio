@@ -1,0 +1,15 @@
+@use '_variables' as v;
+@layer global {
+    html {font-size: clamp(0.875rem, 0.743rem + 0.56vw, 1.25rem);}  // https://min-max-calculator.9elements.com/?14,20,375,1440
+
+    body {
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: v.$ink-black;
+    }
+
+    .icon {opacity: 0.69;}
+    .visually-hidden {display: none;}
+    *:focus-visible {outline: none;}
+}

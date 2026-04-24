@@ -1,0 +1,15 @@
+@use '_variables' as v;
+@layer components {
+    .outline__texture {
+        z-index: 0;
+        overflow: hidden;
+        background-image: url(../images/texture-cotton.webp);
+        background-size: auto;
+        background-repeat: repeat;
+        mask-image:
+            linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+            linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        mask-composite: intersect;
+        opacity: 0.5;
+    }
+}

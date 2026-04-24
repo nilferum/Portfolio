@@ -1,0 +1,35 @@
+@use '_variables' as v;
+@layer regions {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        min-height: v.$detail-margin-block;
+        padding-block: 1rem;
+    }
+
+    .site-title {
+        @include v.eng-title (400);
+        font-size: 1.5rem;
+        letter-spacing: 0.075ex;
+        text-transform: uppercase;
+    }
+
+    .global-navigation {
+        display: flex;
+        gap: 1rem;
+
+        button {
+            position: relative;
+            z-index: 800;
+            display: block;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        a {z-index: 800;}
+        a img {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+}

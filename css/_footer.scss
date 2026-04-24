@@ -1,0 +1,10 @@
+@use '_variables' as v;
+@layer regions {
+    .footer {
+        @include v.eng-title (500);
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-align: center;
+        opacity: 0.5;
+    }
+}

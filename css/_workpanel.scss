@@ -1,0 +1,65 @@
+@use '_variables' as v;
+@layer components {
+
+    .workpanel {
+        max-width: 800px;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+
+        &__title {
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            @include v.eng-title (700);
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: 0.2ex;
+            text-align: right;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+
+        &__scopelabels {
+            display: flex;
+            justify-self: end;
+            gap: 1em;
+            margin: 0em calc(1ex/(2rem / 0.875rem)  ) 2rem 0;
+            @include v.eng-title (300);
+            font-size: 0.875rem;
+            line-height: 1;
+            letter-spacing: 0.04em;
+            opacity: 0.75;
+
+
+            & li:not(:last-child)::after {
+                content: "";
+                display: inline-block;
+                width: 2px;
+                height: 0.75em;
+                background-color: currentColor;
+                margin-left: calc(1em - 1px);
+                opacity: 0.5;
+                }
+        }
+
+        &__description {
+            height: fit-content;
+            padding-right: 3rem;
+            line-height: 1.75;
+            letter-spacing: -0.02em;
+            white-space: pre-wrap;
+
+            @media (max-width: 768px) {padding-right: 1rem;}
+        }
+
+        &__button {
+            position: relative;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            margin: auto 0 auto auto;
+            outline-offset: 1rem;
+            transform: translateX(0rem);
+            scale: 1;
+        }
+    }
+}

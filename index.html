@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>ポートフォリオ | 足立 穣治</title>
+        <meta name="description" content="Portfolio by Adachi George">
+        <link rel="icon" href="images/logo.svg">
+        <meta name="theme-color" content="#DDDDE4">
+        
+        <meta property="og:title"           content="ポートフォリオ | 足立 穣治">
+        <meta property="og:description"     content="Portfolio by Adachi George">
+        <meta property="og:locale"          content="ja_JP">
+        <meta property="og:type"            content="website">
+        <meta property="og:url"             content="https://adachigeorge.com/portfolio/index.html">
+        <meta property="og:image"           content="https://adachigeorge.com/portfolio/images/ogp.jpg">
+        <meta name="twitter:card"           content="summary_large_image">
+        <meta name="twitter:title"          content="ポートフォリオ | 足立 穣治">
+        <meta name="twitter:description"    content="Portfolio by Adachi George">
+        <meta name="twitter:image"          content="https://adachigeorge.com/portfolio/images/ogp.jpg">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script> <!--Splide 4.1.4-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer type="module"></script>
+    </head>
+
+    <body>
+        <header class="header">
+            <h1 class="site-title">Portfolio</h1>
+            <nav class="global-navigation">
+                <button class="header-link mail" aria-label="copy mailaddress" data-label="Click to copy"><img class="icon" src="images/mail.svg" alt="Mail"></button>
+                <a class="header-link" href="https://github.com/nilferum?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub""><img class="icon" src="images/github.svg" alt="GitHub Repository"></a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="outline">
+                <div class="outline__texture" aria-hidden="true"></div>
+                <h2 class="visually-hidden">作品一覧</h2>
+                <figure class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list"></ul>
+                    </div>
+                    <figcaption class="workpanel">
+                        <h3 class="workpanel__title"></h3>
+                        <ul class="workpanel__scopelabels"></ul>
+                        <p class="workpanel__description"></p>
+                        <button class="workpanel__button chevron" aria-label="詳細を見る"></button>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="detail" aria-hidden="true">
+                <h3 class="detail__title abs"></h3>
+                <button class="detail__button abs" aria-label="閉じる"></button>
+                <article class="detail__contents"></article>
+                <div class="detail__scrolltrack abs"><div class="detail__scrollthumb abs"></div></div>
+                <nav class="detail__keyguide">
+                    <p class="abs leftkey"><span class="key">&larr;</span><span class="pagination">A | Q</span></p>
+                    <p class="abs rightkey"><span class="key">&rarr;</span><span class="pagination">D | E</span></p>
+                </nav>
+            </section>
+
+            <div class="scrim"></div>
+        </main>
+
+        <footer class="footer">
+            <small class="copyright">&copy; 2026 Adachi George / All right reserved.</small>
+        </footer>
+    </body>
+</html>

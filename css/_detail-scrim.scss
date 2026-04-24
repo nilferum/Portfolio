@@ -1,0 +1,244 @@
+@use '_variables' as v;
+@layer components {
+    .detail {position: relative;
+        & .abs {position: absolute;}
+        .info-links {position: absolute;}
+    }
+
+    .detail {
+        z-index: 1000;
+        visibility: hidden;
+        pointer-events: none;
+        margin-block: v.$detail-margin-block;
+        border-radius: 0.5rem;
+        background-color: v.$sage-green;
+        background-image:
+            radial-gradient(ellipse at 20% 50%, oklch(75% 0.07 155) 0%, v.$sage-green 65%),
+            radial-gradient(ellipse at 80% 20%, oklch(68% 0.05 155) 0%, v.$sage-green 45%);
+        box-shadow:
+            inset 0 1px 0 0 oklch(1 0 0 / 25%),
+            inset 1px 0 0 0 oklch(1 0 0 / 25%),
+            inset 0 0 0 1px oklch(1 0 0 / 5%),
+            0 1rem 2rem v.$ink-black-shadow;
+        opacity: 0;
+        transition: 200ms;
+
+        timeline-scope: --article-scroll;
+
+        &.is-open {
+            visibility: visible;
+            pointer-events: auto    ;
+            opacity: 1;
+        }
+
+        &__title {
+            top: 50%;
+            right: -1.5rem;
+            transform: translateY(-50%);
+            @include v.eng-title (600);
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            writing-mode: vertical-lr;
+
+            @supports (animation-timeline: scroll()) {
+                background-image: linear-gradient(to bottom, v.$ink-black 50%, oklch(0.31 0 0 / 50%) 50%);
+                background-size: 100% 200%;
+                background-position: 0 100%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation-timeline: --article-scroll;
+                animation-name: title-reveal;
+                animation-timing-function: linear;
+                animation-fill-mode: both;
+                }
+
+            @supports not (animation-timeline: scroll()) {opacity: 0.5;}
+        }
+
+        &__contents {
+            grid-area: 1/1/-1/-1;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none;
+            scroll-timeline-name: --article-scroll;
+            scroll-timeline-axis: block;
+
+            @media (max-width: 876px) {padding-right: 3rem;}
+        }
+
+        &__button {
+            display: block;
+            top: -1.75rem;
+            right: -1.75rem;
+            width: 4rem;
+            height: 4rem;
+            border: 1px solid v.$ink-black-shadow;
+            border-radius: 50%;
+            background-image: v.$frosted-glass;
+            box-shadow: 0 0 2px v.$ink-black-shadow;
+            backdrop-filter: blur(4px);
+
+            &:focus-visible {outline: 1px solid currentColor;}
+            @media (max-width: 876px) {scale: 0.75;}
+        }
+
+        &__scrolltrack {
+            inset-block: 0;
+            right: 2rem;
+            width: 1px;
+            height: 75%;
+            margin-block: auto;
+            background-color: v.$ink-black-shadow;
+            }
+
+        &__scrollthumb {
+            top: 0;
+            width: 1px;
+            height: 20%;
+            background-color: v.$ink-black;
+            animation-name: scroll-progress;
+            animation-timing-function: linear;
+            animation-timeline: --article-scroll;
+            animation-fill-mode: both;
+        }
+        @supports not (timeline-scope: --article-scroll) {.detail__scrollthumb { display: none; }}
+
+        &__keyguide {
+            display: none;
+            flex-direction: row;
+            gap: 2rem;
+            cursor: pointer;
+            @media (min-width:768px) {display: flex;}
+
+            p {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                bottom: 0.5rem;
+                left: 0.5rem;
+                width: 4rem;
+                height: 4rem;
+                gap: 0rem;
+                border-radius: 50%;
+                background-image: v.$frosted-glass;
+                box-shadow: 0 0 4px v.$ink-black-shadow;
+                backdrop-filter: blur(4px);
+                @include v.eng-title (500);
+
+                .key {
+                    display: inline;
+                    line-height: 1;
+                    scale: 1.5;
+                    opacity: 0.5;
+                }
+
+                .pagination {
+                    width: max-content;
+                    font-size: 0.75rem;
+                    line-height: 1;
+                    letter-spacing: -0.03em;
+                    opacity: 0.5;
+                }
+
+                &:last-child {left: 4.75rem;}
+            }
+        }
+    }
+    
+    .info- {
+        &group {            // h3 + dt + ddを包んでるコンテナ単位
+            display: flex;
+            margin-inline: auto;
+            margin-bottom: 5vh;
+            gap: 3rem;
+            width: min(36rem, 80vw);
+
+            &:first-child{margin-top: 5vh;}
+            &:last-child{margin-bottom: 15vh;}
+
+            @media (max-width:876px) {
+                gap: 8px;
+                width: 100%;
+            }
+        }
+
+        &heading {
+            display: inline-flex;
+            align-items: center;
+            gap: 1em;
+            @include v.eng-title (500);
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            opacity: 0.25;
+            animation: verticalClipSwipe 239ms cubic-bezier(0.34, 0, 0.66, 1) forwards;
+        }
+
+        &body {margin-top: 8rem;}
+
+    }
+
+    .info-body {
+        .info-subject {
+            margin-bottom: 0.25rem;
+            @include v.eng-title (400);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+            opacity: 0.5;
+            animation: delayedClipSwipe 464ms cubic-bezier(0.34, 0, 0.66, 1) forwards;
+        }
+
+        .info-text {
+            margin-left: 2em;
+            line-height: 1.75;
+            letter-spacing: 0.03em;
+            animation: delayedClipSwipe 900ms cubic-bezier(0.34, 0, 0.75, 1) forwards;
+
+            @media (max-width: 876px) {margin-left: 1em;}
+        }
+
+        .info-cell + .info-cell {margin-top: 1.5em;}        // (dt + dd)を包むコンテナ同士のgap
+        .info-text + .info-text {margin-top: 0.125em;}      // dd同士のgap
+    }
+
+    .info-links {
+        display: flex;
+        flex-direction: column;
+        right: -2rem;
+        bottom: 4rem;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;  // 必ず25%以上
+        border-radius: 0.25rem;
+        background-image: v.$frosted-glass;
+        box-shadow: 0 0 2px v.$ink-black-shadow;
+        backdrop-filter: blur(4px);
+        @media (max-width:876px) {bottom: -0.5rem;}
+
+        .info-link {position: relative;}
+        .info-link img {height: 2rem;}
+    }
+
+    @media (max-width:876px) {
+        .info-group {gap: 8px;}
+        .info-group:not(:last-child) {margin-bottom: 6rem;}
+        .info-body {margin-top: 2rem;}
+        .info-text {margin-left: 0.5em;}
+    }
+
+    .scrim {
+        z-index: 900;
+        visibility: hidden;
+        background-color: oklch(1 0 0 / 5%);
+        backdrop-filter: blur(4px);
+
+        &.is-open {visibility: visible;}
+    }
+}

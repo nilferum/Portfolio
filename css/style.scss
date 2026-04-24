@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@use '_variables';
+@use '_layer';                      // layer
+@use '_reset';                      // layer system
+@use '_debug';                      // layer system
+@use '_base';                       // layer global
+@use '_grid';                       // layer global
+@use '_animation';                  // layer global
+@use '_header';                     // layer regions
+@use '_footer';                     // layer regions
+@use '_body';                       // layer regions
+@use '_outline';                    // layer components
+@use '_workpanel';                  // layer components
+@use '_detail-scrim';               // layer components
+@use '_pseudo';                     // layer components
+@use '_splide';                     // unlayered : splide標準スタイル打ち消しのため

@@ -1,0 +1,47 @@
+@use '_variables' as v;
+@layer global {
+    //grid toplayer
+    body {
+        display: grid;
+        grid-template: 
+        ".   header      ." v.$detail-margin-block
+        ".   header      ." auto
+        ".   carousel    ." 1fr
+        ".   .           ." 2.5vh
+        ".   pagination  ." auto
+        ".   .           ." 2.5vh
+        ".   workpanel   ." auto
+        ".   footer      ." #{v.$detail-margin-block}
+        /1fr min(85vw,1200px) 1fr; 
+    }
+
+    .header                         {grid-area: header;}
+    main                            {display: contents;}
+        .outline                    {display: contents;}
+            .outline__texture       {grid-area: 3 / 1 / 4 / -1;}
+            .splide                 {grid-area: 1 / 1 / -1 /-1; @include v.subgrid;} // display: contents;が出来ないため
+                .splide__track      {grid-area: carousel;}
+                .splide__pagination {grid-area: pagination;}
+                .workpanel          {grid-area: workpanel;}
+        .detail                     {grid-area: 1 / 2 / -1 / -2; @include v.subgrid;}
+        .scrim                      {grid-area: 1 / 1/ -1 / -1;}
+    .footer                         {grid-area: footer;}
+
+    //grid secondary layer
+    .workpanel {
+        display: grid;
+        grid-template:
+        "title       title               title      " auto
+        "scopelabels scopelabels         scopelabels" auto
+        "description .                   button     " auto
+        /20rem       fit-content(4rem)   auto;
+
+        @media (max-width: 768px) {grid-template-columns: 18rem fit-content(1rem) auto;}
+    }
+
+    .workpanel__title       {grid-area: title;}
+    .workpanel__scopelabels {grid-area: scopelabels;}
+    .workpanel__description {grid-area: description;}
+    .workpanel__button      {grid-area: button;}
+
+}
