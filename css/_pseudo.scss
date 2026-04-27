@@ -29,11 +29,11 @@
     .chevron::before {
         content: '';
         display: block;
-        width: calc((2rem - 4px) / sqrt(2));
-        height: calc((2rem - 4px) / sqrt(2));
+        width: calc((1.5rem - 4px) / sqrt(2));
+        height: calc((1.5rem - 4px) / sqrt(2));
         border-top: 2px solid v.$ink-black;
         border-right: 2px solid v.$ink-black;
-        transform: rotate(45deg);
+        transform: rotate(45deg) translateX(0.25rem) translateY(-0.25rem);
         opacity: 0.75;
     }
 
@@ -44,11 +44,26 @@
         display: block;
         width: 3rem;
         height: 3rem;
-        border-radius: 4px;
+        border-radius: 50%;
+        @supports not (corner-shape: squircle) {border-radius: 25%;}                             // not Blink
+        @supports (corner-shape: squircle) {border-radius: 50%; corner-shape: squircle;}         // Blink
         background-color: oklch(0 0 0 / 5%);
         box-shadow: 2px 2px 2px oklch(0 0 0 / 15%);
-        transform: translate(-0.5rem, -0.5rem);
+        translate: -0.5rem -0.5rem;
     }
+    .detail__keyguide .chevron::before {
+        width: calc(0.5rem * sqrt(2));      // こちらはシェブロンが小さくなりすぎないように(0.7rem程度の大きさに)
+        height: calc(0.5rem * sqrt(2));
+        transform: rotate(225deg);
+        translate: 0.125rem;
+    }
+
+    .detail__keyguide .chevron.rightkey::before {
+        transform: rotate(45deg);
+        translate: -0.125rem;
+    }
+
+    .detail__keyguide .chevron::after {display: none;}
 
     .chevron:focus-visible::after {background-color: oklch(0.62 0.07 55 / 25%)}
 

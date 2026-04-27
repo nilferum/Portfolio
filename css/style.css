@@ -474,46 +474,40 @@
     gap: 2rem;
     cursor: pointer;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 876px) {
     .detail__keyguide {
       display: flex;
     }
   }
-  .detail__keyguide p {
+  .detail__keyguide div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     bottom: 0.5rem;
     left: 0.5rem;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     gap: 0rem;
-    border-radius: 50%;
+  }
+  @supports not (corner-shape: squircle) {
+    .detail__keyguide div {
+      border-radius: 50%;
+    }
+  }
+  @supports (corner-shape: squircle) {
+    .detail__keyguide div {
+      border-radius: 50%;
+      corner-shape: squircle;
+    }
+  }
+  .detail__keyguide div {
     background-image: linear-gradient(oklch(94% 0.01 106.5deg / 0.55), oklch(94% 0.01 106.5deg / 0.45));
     box-shadow: 0 0 4px oklch(31% 0 0deg / 0.25);
     backdrop-filter: blur(4px);
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
   }
-  .detail__keyguide p .key {
-    display: inline;
-    line-height: 1;
-    scale: 1.5;
-    opacity: 0.5;
-  }
-  .detail__keyguide p .pagination {
-    width: -moz-max-content;
-    width: max-content;
-    font-size: 0.75rem;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    opacity: 0.5;
-  }
-  .detail__keyguide p:last-child {
-    left: 4.75rem;
+  .detail__keyguide div:last-child {
+    left: 4rem;
   }
   .info-group {
     display: flex;
@@ -663,11 +657,11 @@
   .chevron::before {
     content: "";
     display: block;
-    width: calc((2rem - 4px) / 1.4142135624);
-    height: calc((2rem - 4px) / 1.4142135624);
+    width: calc((1.5rem - 4px) / 1.4142135624);
+    height: calc((1.5rem - 4px) / 1.4142135624);
     border-top: 2px solid oklch(31% 0 0deg);
     border-right: 2px solid oklch(31% 0 0deg);
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateX(0.25rem) translateY(-0.25rem);
     opacity: 0.75;
   }
   .chevron::after {
@@ -677,10 +671,36 @@
     display: block;
     width: 3rem;
     height: 3rem;
-    border-radius: 4px;
+    border-radius: 50%;
+  }
+  @supports not (corner-shape: squircle) {
+    .chevron::after {
+      border-radius: 25%;
+    }
+  }
+  @supports (corner-shape: squircle) {
+    .chevron::after {
+      border-radius: 50%;
+      corner-shape: squircle;
+    }
+  }
+  .chevron::after {
     background-color: oklch(0% 0 0deg / 0.05);
     box-shadow: 2px 2px 2px oklch(0% 0 0deg / 0.15);
-    transform: translate(-0.5rem, -0.5rem);
+    translate: -0.5rem -0.5rem;
+  }
+  .detail__keyguide .chevron::before {
+    width: 0.7071067812rem;
+    height: 0.7071067812rem;
+    transform: rotate(225deg);
+    translate: 0.125rem;
+  }
+  .detail__keyguide .chevron.rightkey::before {
+    transform: rotate(45deg);
+    translate: -0.125rem;
+  }
+  .detail__keyguide .chevron::after {
+    display: none;
   }
   .chevron:focus-visible::after {
     background-color: oklch(62% 0.07 55deg / 0.25);

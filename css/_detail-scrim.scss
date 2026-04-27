@@ -111,40 +111,24 @@
             flex-direction: row;
             gap: 2rem;
             cursor: pointer;
-            @media (min-width:768px) {display: flex;}
+            @media (min-width:876px) {display: flex;}
 
-            p {
+            div {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 bottom: 0.5rem;
                 left: 0.5rem;
-                width: 4rem;
-                height: 4rem;
+                width: 3rem;
+                height: 3rem;
                 gap: 0rem;
-                border-radius: 50%;
+                @supports not (corner-shape: squircle) {border-radius: 50%;}                             // not Blink
+                @supports (corner-shape: squircle) {border-radius: 50%; corner-shape: squircle;}         // Blink
                 background-image: v.$frosted-glass;
                 box-shadow: 0 0 4px v.$ink-black-shadow;
                 backdrop-filter: blur(4px);
-                @include v.eng-title (500);
-
-                .key {
-                    display: inline;
-                    line-height: 1;
-                    scale: 1.5;
-                    opacity: 0.5;
-                }
-
-                .pagination {
-                    width: max-content;
-                    font-size: 0.75rem;
-                    line-height: 1;
-                    letter-spacing: -0.03em;
-                    opacity: 0.5;
-                }
-
-                &:last-child {left: 4.75rem;}
+                &:last-child {left: 4rem;}
             }
         }
     }
