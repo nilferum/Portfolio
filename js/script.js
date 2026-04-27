@@ -23,7 +23,7 @@ const toggleKeys        = ['w', 's', 'o', 'f'];
 
 const TH_SWIPE          = window.innerWidth * 0.25
 let touchStartX         = 0;
-
+let isSwitching         = false;
 
 function updateContent(index) {
     const data = worksData[index];
@@ -42,11 +42,30 @@ function updateContent(index) {
 }
 
 function switchContent(index) {
-    const targets = [workpanelTitle, workpanelLabels, workpanelDesc];
-    targets.forEach(el => el.classList.add('is-switching'));
-    updateContent(index);
-    void targets[0].offsetWidth;                                                            // 強制リフロー
-    targets.forEach(el => el.classList.remove('is-switching'));
+    if (isSwitching) return;
+    isSwitching = true;
+
+    detail.classList.add('is-switching-out');
+
+    detail.addEventListener('animationend', () => {
+        updateContent(splide.index);
+        detail.classList.replace('is-switching-out', 'is-switching-in');
+
+        detail.addEventListener('animationend', () => {
+            detail.classList.remove('is-switching-in');
+            delete detail.dataset.direction;
+            isSwitching = false;
+        }, { once: true });
+    }, { once: true });
+}
+
+function goPrev() {
+    detail.dataset.direction = 'prev';
+    splide.go('<');
+}
+function goNext() {
+    detail.dataset.direction = 'next';
+    splide.go('>');
 }
 
 function handleOpenOverlay() {
@@ -54,14 +73,18 @@ function handleOpenOverlay() {
     detail.classList.add('is-open');
     detail.setAttribute('aria-hidden', 'false');
     document.addEventListener('keydown', handleTrapFocus);
+    detail.removeAttribute('inert'); 
 }
 
 function handleCloseOverlay() {
     scrim.classList.remove('is-open');
-    detail.classList.remove('is-open');
+    detail.classList.remove('is-open', 'is-switching-out', 'is-switching-in');
     detail.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', handleTrapFocus);
+    delete detail.dataset.direction;
+    isSwitching = false;
     workpanelButton.focus();                                                                // detail内部にfocusが残るのを防ぐため
+    detail.setAttribute('inert', ''); 
 }
 
 function handleTrapFocus(e) {                                                               // Overlay内外でFocusを分離させるため
@@ -91,8 +114,8 @@ function handleKeydown(e) {
             : handleOpenOverlay();
         return;
     }
-    if (prevKeys.includes(e.key)) splide.go('<');
-    if (nextKeys.includes(e.key)) splide.go('>');
+    if (prevKeys.includes(e.key)) goPrev();
+    if (nextKeys.includes(e.key)) goNext();
 }
 
 function handleTouchStart(e) {
@@ -102,7 +125,7 @@ function handleTouchStart(e) {
 function handleSwipe(e) {
     const diff = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(diff) < TH_SWIPE) return;
-    splide.go(diff < 0 ? '>' : '<');
+    diff < 0 ? goNext() : goPrev();
 }
 
 function handleCopyMail() {
@@ -114,7 +137,7 @@ function handleCopyMail() {
         mail.classList.remove('is-copied');
         setTimeout(() => {
             mail.dataset.label = 'Click to copy';
-        }, 200);
+        }, 200);    
     }, 700);
 }
 
@@ -145,8 +168,8 @@ const events = [
     [list,              'click',        handleOpenOverlay],
     [workpanelButton,   'click',        handleOpenOverlay],
     [detailButton,      'click',        handleCloseOverlay],
-    [leftkeyTooltip,    'click',        () => splide.go('<')],
-    [rightkeyTooltip,   'click',        () => splide.go('>')],
+    [leftkeyTooltip,    'click',        goPrev],
+    [rightkeyTooltip,   'click',        goNext],
     [scrim,             'click',        handleCloseOverlay],
 ];
 

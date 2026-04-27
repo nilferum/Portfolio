@@ -161,31 +161,60 @@
   }
 }
 @layer global {
-  @keyframes clipSwipe {
+  @keyframes clip-out-down {
     from {
-      clip-path: inset(-50% 100% -50% 0);
+      clip-path: inset(0);
     }
     to {
-      clip-path: inset(-50% 0 -50% 0);
+      clip-path: inset(100% 0 0 0);
     }
   }
-  @keyframes verticalClipSwipe {
+  @keyframes clip-in-down {
     from {
-      clip-path: inset(0 -50% 100% -50%);
+      clip-path: inset(0 0 100% 0);
     }
     to {
-      clip-path: inset(0 -50% 0 -50%);
+      clip-path: inset(0);
     }
   }
-  @keyframes delayedClipSwipe {
-    0% {
-      clip-path: inset(-50% 100% -50% 0);
+  @keyframes slide-out-left {
+    from {
+      transform: translateX(0);
+      opacity: 1;
     }
-    34% {
-      clip-path: inset(-50% 100% -50% 0);
+    to {
+      transform: translateX(-30vw);
+      opacity: 0;
     }
-    100% {
-      clip-path: inset(-50% 0 -50% 0);
+  }
+  @keyframes slide-out-right {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(30vw);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-30vw);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(30vw);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
   @keyframes scroll-progress {
@@ -362,8 +391,13 @@
     position: absolute;
   }
   .detail {
+    --animation-time-overlay: 300ms;
+    --animation-time-switch: 400ms;
+    --animation-time-delayed: 350ms;
+    --decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+    --decelerate-soft: cubic-bezier(0.2, 0.5, 0.4, 1);
+    --accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
     z-index: 1000;
-    visibility: hidden;
     pointer-events: none;
     margin-block: 2.5vh;
     border-radius: 0.5rem;
@@ -371,13 +405,42 @@
     background-image: radial-gradient(ellipse at 20% 50%, oklch(75% 0.07 155deg) 0%, oklch(71% 0.06 155.1deg) 65%), radial-gradient(ellipse at 80% 20%, oklch(68% 0.05 155deg) 0%, oklch(71% 0.06 155.1deg) 45%);
     box-shadow: inset 0 1px 0 0 oklch(100% 0 0deg / 0.25), inset 1px 0 0 0 oklch(100% 0 0deg / 0.25), inset 0 0 0 1px oklch(100% 0 0deg / 0.05), 0 1rem 2rem oklch(31% 0 0deg / 0.25);
     opacity: 0;
-    transition: 200ms;
+    transform: translateY(100vh);
+    transition: transform var(--animation-time-overlay) var(--accelerate), opacity var(--animation-time-overlay) var(--accelerate);
     timeline-scope: --article-scroll;
   }
+  .detail:is(.is-switching-out, .is-switching-in) .detail__title {
+    animation-timeline: auto;
+  }
+  .detail.is-switching-out :is(.detail__title) {
+    animation: clip-out-down var(--animation-time-switch) var(--decelerate) 0ms forwards;
+  }
+  .detail.is-switching-in :is(.detail__title) {
+    animation: clip-in-down var(--animation-time-switch) var(--decelerate) 0ms forwards;
+  }
+  .detail.is-switching-out :is(.info-links) {
+    animation: clip-out-down var(--animation-time-overlay) var(--decelerate) 0ms forwards;
+  }
+  .detail.is-switching-in :is(.info-links) {
+    animation: clip-in-down var(--animation-time-overlay) var(--accelerate) 100ms both;
+  }
+  .detail[data-direction=next].is-switching-out :is(.detail__contents > *:not(.info-links)) {
+    animation: slide-out-left var(--animation-time-switch) var(--accelerate) 0ms forwards;
+  }
+  .detail[data-direction=next].is-switching-in :is(.detail__contents > *:not(.info-links)) {
+    animation: slide-in-right var(--animation-time-delayed) var(--decelerate-soft) 50ms both;
+  }
+  .detail[data-direction=prev].is-switching-out :is(.detail__contents > *:not(.info-links)) {
+    animation: slide-out-right var(--animation-time-switch) var(--accelerate) 0ms forwards;
+  }
+  .detail[data-direction=prev].is-switching-in :is(.detail__contents > *:not(.info-links)) {
+    animation: slide-in-left var(--animation-time-delayed) var(--decelerate-soft) 50ms both;
+  }
   .detail.is-open {
-    visibility: visible;
     pointer-events: auto;
+    transform: translateY(0);
     opacity: 1;
+    transition: transform var(--animation-time-overlay) var(--decelerate), opacity var(--animation-time-overlay) var(--decelerate);
   }
   .detail__title {
     top: 50%;
@@ -415,6 +478,7 @@
   .detail__contents {
     grid-area: 1/1/-1/-1;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
     scroll-timeline-name: --article-scroll;
@@ -541,7 +605,6 @@
     text-transform: uppercase;
     writing-mode: vertical-rl;
     opacity: 0.25;
-    animation: verticalClipSwipe 239ms cubic-bezier(0.34, 0, 0.66, 1) forwards;
   }
   .info-body {
     margin-top: 8rem;
@@ -556,13 +619,11 @@
     letter-spacing: -0.02em;
     text-transform: lowercase;
     opacity: 0.5;
-    animation: delayedClipSwipe 464ms cubic-bezier(0.34, 0, 0.66, 1) forwards;
   }
   .info-body .info-text {
     margin-left: 2em;
     line-height: 1.75;
     letter-spacing: 0.03em;
-    animation: delayedClipSwipe 900ms cubic-bezier(0.34, 0, 0.75, 1) forwards;
   }
   @media (max-width: 876px) {
     .info-body .info-text {
