@@ -63,8 +63,9 @@
         "GitHub",
         "Notion",
         "Eagle",
-        "cwebp (webp化)",
-        "Firefox (Grid調整)"
+        "oklch.com",
+        "cwebp (.webp)",
+        "Firefox (Grid Inspector)"
       ],
       "fonts": [
         "Jost",
@@ -73,7 +74,7 @@
       "assets": [
         "MockUPhone",
         "Paper-co (Texture)",
-        "ICOOON MONO (Icon)",
+        "ICOOON MONO",
         "GitHub (Logo)"
       ],
       "period": [

@@ -1,6 +1,7 @@
-import { work1 } from './work1.js';
+import work1 from './work1.json' with { type: 'json' };
 import { work2 } from './work2.js';
 import { work3 } from './work3.js';
+import { renderDetail } from './render.js';
 
 const worksData         = [work1, work2, work3];
 const mail              = document.querySelector('.mail');
@@ -32,8 +33,11 @@ function updateContent(index) {
     workpanelTitle.textContent  = data.title;
     workpanelDesc.textContent   = data.description;
     detailTitle.textContent     = data.title;
-    detailContents.innerHTML    = data.infoHTML ?? '';
     workpanelLabels.innerHTML   = '';
+
+    if (data.detail)    detailContents.replaceChildren(...renderDetail(data));
+    else                detailContents.innerHTML = data.infoHTML ?? '';                     // json化していない作品(work2, work3)用。全件移したら消す
+
     data.category.forEach(cat => {
         const li = document.createElement('li');
         li.textContent = cat;

@@ -573,6 +573,17 @@
   .detail__keyguide div:last-child {
     left: 4rem;
   }
+  .scrim {
+    z-index: 900;
+    visibility: hidden;
+    background-color: oklch(100% 0 0deg / 0.05);
+    backdrop-filter: blur(4px);
+  }
+  .scrim.is-open {
+    visibility: visible;
+  }
+}
+@layer components {
   .info-group {
     display: flex;
     margin-inline: auto;
@@ -676,15 +687,6 @@
     .info-text {
       margin-left: 0.5em;
     }
-  }
-  .scrim {
-    z-index: 900;
-    visibility: hidden;
-    background-color: oklch(100% 0 0deg / 0.05);
-    backdrop-filter: blur(4px);
-  }
-  .scrim.is-open {
-    visibility: visible;
   }
 }
 @layer components {
