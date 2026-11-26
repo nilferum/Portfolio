@@ -1,0 +1,108 @@
+{
+  "id": "work-05",
+  "title": "椿姫",
+  "category": [
+    "Direct",
+    "Design"
+  ],
+  "description": "",
+  "image": "images/work5.webp",
+  "url": "",
+  "overview": {
+    "target": [
+      ""
+    ],
+    "objective": [
+      ""
+    ],
+    "approach": [
+      ""
+    ],
+    "therefore": [
+      ""
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      ""
+    ],
+    "challenge": [
+      ""
+    ],
+    "struggle": [
+      ""
+    ],
+    "reflection": [
+      ""
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "",
+      "usage": "",
+      "note": ""
+    },
+    "language": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "tool": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "New York",
+        "usage": "",
+        "note": "Artem Nevsky 作、Pixel Surplus 配布。Free Personal Use は「営利・事業に一切関係しないプロジェクト」限定で、就活ポートフォリオは対象外の読みが自然。Desktop Commercial(14ドル)購入か差し替えを要検討"
+      },
+      {
+        "name": "Shippori Mincho B1",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Crimson Text",
+        "usage": "",
+        "note": "Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "",
+      "time": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}

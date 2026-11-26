@@ -1,0 +1,103 @@
+{
+  "id": "work-03",
+  "title": "宮原精磁",
+  "category": [
+    "Direct",
+    "Design"
+  ],
+  "description": "",
+  "image": "",
+  "url": "",
+  "overview": {
+    "target": [
+      ""
+    ],
+    "objective": [
+      ""
+    ],
+    "approach": [
+      ""
+    ],
+    "therefore": [
+      ""
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      ""
+    ],
+    "challenge": [
+      ""
+    ],
+    "struggle": [
+      ""
+    ],
+    "reflection": [
+      ""
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "",
+      "usage": "",
+      "note": ""
+    },
+    "language": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "tool": [
+      {
+        "name": "Figma",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "Space Grotesk",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Helvetica / Noto Sans JP / Hiragino Kaku Gothic ProN",
+        "usage": "システムフォント",
+        "note": "Noto Sans JP は Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "",
+      "time": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}

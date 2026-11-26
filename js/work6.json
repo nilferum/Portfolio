@@ -1,0 +1,108 @@
+{
+  "id": "work-06",
+  "title": "Carpe diem",
+  "category": [
+    "Direct",
+    "Design"
+  ],
+  "description": "",
+  "image": "images/work6.webp",
+  "url": "",
+  "overview": {
+    "target": [
+      ""
+    ],
+    "objective": [
+      ""
+    ],
+    "approach": [
+      ""
+    ],
+    "therefore": [
+      ""
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      ""
+    ],
+    "challenge": [
+      ""
+    ],
+    "struggle": [
+      ""
+    ],
+    "reflection": [
+      ""
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "",
+      "usage": "",
+      "note": ""
+    },
+    "language": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "tool": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "Questrial",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Libre Caslon Display",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Noto Sans JP",
+        "usage": "",
+        "note": "Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "",
+      "time": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}

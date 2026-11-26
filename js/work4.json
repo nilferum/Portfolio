@@ -1,0 +1,134 @@
+{
+  "id": "work-04",
+  "title": "que-sais-je",
+  "category": [
+    "Direct",
+    "Design",
+    "Coding"
+  ],
+  "description": "",
+  "image": "",
+  "url": "https://que-sais-je.adachigeorge.com/",
+  "overview": {
+    "target": [
+      ""
+    ],
+    "objective": [
+      ""
+    ],
+    "approach": [
+      ""
+    ],
+    "therefore": [
+      ""
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      ""
+    ],
+    "challenge": [
+      ""
+    ],
+    "struggle": [
+      ""
+    ],
+    "reflection": [
+      ""
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "Self Esteem (m-durana, MIT)",
+      "usage": "",
+      "note": "レイアウト原案 Aysenur Turk。フッターにクレジットあり。書体はテンプレートの3種(Space Grotesk / Inter / Playfair Display)を全て差し替え"
+    },
+    "language": [
+      {
+        "name": "Markdown",
+        "usage": "記事",
+        "note": ""
+      },
+      {
+        "name": "Astro",
+        "usage": "テンプレート改変",
+        "note": "contact書き直し、Menu・記事ページ・content.config 等の部分修正"
+      },
+      {
+        "name": "CSS (+SCSS)",
+        "usage": "テンプレート改変",
+        "note": "global.scss 1205行中315行を改変"
+      },
+      {
+        "name": "TypeScript",
+        "usage": "",
+        "note": "reading-time.ts を新規追加"
+      },
+      {
+        "name": "Python",
+        "usage": "フォントサブセット化",
+        "note": "scripts/subset-font.py(prebuildで実行)"
+      }
+    ],
+    "tool": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "Zen Old Mincho",
+        "usage": "本文(日本語)",
+        "note": "セルフホスト。Google Fonts 配布の TTF を prebuild(subset-font.py)でサブセット化"
+      },
+      {
+        "name": "Darker Grotesque",
+        "usage": "見出し・ナビ",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Bodoni Moda",
+        "usage": "表紙の大見出し・強調(イタリック)",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "DM Mono",
+        "usage": "コード",
+        "note": "Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "",
+      "time": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "work-07",
+  "title": "rotated dotty FONT",
+  "category": [
+    "Direct",
+    "Design"
+  ],
+  "description": "",
+  "image": "images/work7.webp",
+  "url": "",
+  "overview": {
+    "target": [
+      ""
+    ],
+    "objective": [
+      ""
+    ],
+    "approach": [
+      ""
+    ],
+    "therefore": [
+      ""
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      ""
+    ],
+    "challenge": [
+      ""
+    ],
+    "struggle": [
+      ""
+    ],
+    "reflection": [
+      ""
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "",
+      "usage": "",
+      "note": ""
+    },
+    "language": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "tool": [
+      {
+        "name": "",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "Atkinson Hyperlegible",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Audiowide",
+        "usage": "",
+        "note": "Google Fonts"
+      },
+      {
+        "name": "Bitcount Prop Double",
+        "usage": "",
+        "note": "Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "",
+      "time": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}

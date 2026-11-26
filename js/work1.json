@@ -1,0 +1,162 @@
+{
+  "id": "work-01",
+  "title": "Portfolio",
+  "category": [
+    "Direct",
+    "Design",
+    "Coding"
+  ],
+  "description": "自身の成果物を見せる場として、\nポートフォリオサイトを作りました。",
+  "image": "images/01-mockup.webp",
+  "url": "https://adachigeorge.com/portfolio/",
+  "overview": {
+    "target": [
+      "採用担当者さま"
+    ],
+    "objective": [
+      "短時間で自分のスキルセットを把握してもらうこと",
+      "働いたときのイメージを持っていただくこと"
+    ],
+    "approach": [
+      "コンテンツにすぐアクセスできる",
+      "個性を垣間見せる",
+      "コーディングスキルを提示する"
+    ],
+    "therefore": [
+      "シンプルかつミニマムなレイアウト",
+      "情緒的希薄さをカバーしつつ、個性を打ち出すために色数を絞ったパーソナルカラーを使う",
+      "自分がユーザー視点で感じる｢気持ちよさ｣をCSS AnimationやJavaScriptの組み合わせで表現する"
+    ]
+  },
+  "highlight": {
+    "my reckon": [
+      "デザインや技術の力量、どんな実装を行っているか、はサイト自体で見てもらうのが一番手っ取り早く、誠実だと考えました。",
+      "他方、そこに至る過程や｢なぜそれを採用したのか｣という考え方の部分こそ言語化するべきだと考え、そこから｢文字を読んでもらうためのサイト｣と定義し、逆算的にデザインを設計しました。"
+    ],
+    "challenge": [
+      "文章が主役になるレイアウト",
+      "カルーセル+モーダルのUXをどうカバーするか",
+      "シンプルさの負の側面にどうアプローチするか"
+    ],
+    "struggle": [
+      "当初バニラ想定だったため命名規則のバラつきが生じ、管理･確認に時間を取られたこと",
+      "カルーセルとモーダルを組み合わせたことで実装の複雑さやUXの調整に想定以上の工数がかかったこと"
+    ],
+    "reflection": [
+      "実装/工数のトレードオフについて、情報設計段階でのより深い考察が必要だと感じたこと",
+      "コーディングスキルのショーケースとして設計したため、牛刀割鶏的な実装になってしまったこと",
+      "シンプルさをアニメーションで補完を狙うアプローチは有効に機能したと推測"
+    ]
+  },
+  "tech": {
+    "template": {
+      "name": "",
+      "usage": "",
+      "note": ""
+    },
+    "language": [
+      {
+        "name": "HTML",
+        "usage": "",
+        "note": ""
+      },
+      {
+        "name": "CSS (+SCSS)",
+        "usage": "",
+        "note": "小規模想定でバニラCSSから始め、モーダル管理で肥大化したためSCSSを導入"
+      },
+      {
+        "name": "JavaScript (+Splide)",
+        "usage": "",
+        "note": ""
+      }
+    ],
+    "tool": [
+      {
+        "name": "Illustrator",
+        "usage": "アセット作成",
+        "note": ""
+      },
+      {
+        "name": "Figma",
+        "usage": "ワイヤフレーム作成",
+        "note": ""
+      },
+      {
+        "name": "VSCode",
+        "usage": "コーディング",
+        "note": ""
+      },
+      {
+        "name": "Git, GitHub",
+        "usage": "バージョン･Issue管理",
+        "note": ""
+      },
+      {
+        "name": "Notion, Eagle",
+        "usage": "進捗･アセット管理 + SS",
+        "note": ""
+      },
+      {
+        "name": "Firefox ED DevTool",
+        "usage": "Grid調整",
+        "note": ""
+      }
+    ],
+    "font": [
+      {
+        "name": "Jost",
+        "usage": "英字の見出し・ラベル",
+        "note": "Google Fonts。可変ウェイト"
+      },
+      {
+        "name": "Zen Kaku Gothic New",
+        "usage": "本文",
+        "note": "Google Fonts"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "",
+      "usage": "",
+      "url": "",
+      "note": ""
+    }
+  ],
+  "period": [
+    {
+      "name": "情報設計",
+      "time": "1.5h"
+    },
+    {
+      "name": "デザイン",
+      "time": "2.0h"
+    },
+    {
+      "name": "コーディング",
+      "time": "12.0h"
+    },
+    {
+      "name": "その他修正",
+      "time": "15.0h"
+    }
+  ],
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "https://adachigeorge.com/portfolio",
+      "icon": "images/html.svg"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/nilferum/Portfolio",
+      "icon": "images/github.svg"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "https://pagespeed.web.dev/analysis?url=https://adachigeorge.com/portfolio/",
+      "icon": "images/lighthouse.svg"
+    }
+  ]
+}
