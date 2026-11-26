@@ -8,7 +8,7 @@
 
   "detail": {
     "overview": {
-      "target": [
+      "audience": [
         "採用担当者さま"
       ],
       "objective": [
@@ -19,15 +19,10 @@
         "コンテンツにすぐアクセスできる",
         "個性を垣間見せる",
         "コーディングスキルを提示する"
-      ],
-      "therefore": [
-        "シンプルかつミニマムなレイアウト",
-        "情緒的希薄さをカバーしつつ、個性を打ち出すために色数を絞ったパーソナルカラーを使う",
-        "自分がユーザー視点で感じる｢気持ちよさ｣をCSS AnimationやJavaScriptの組み合わせで表現する"
       ]
     },
 
-    "highlight": {
+    "highlights": {
       "my reckon": [
         "デザインや技術の力量、どんな実装を行っているか、はサイト自体で見てもらうのが一番手っ取り早く、誠実だと考えました。",
         "他方、そこに至る過程や｢なぜそれを採用したのか｣という考え方の部分こそ言語化するべきだと考え、そこから｢文字を読んでもらうためのサイト｣と定義し、逆算的にデザインを設計しました。"
@@ -37,7 +32,21 @@
         "カルーセル+モーダルのUXをどうカバーするか",
         "シンプルさの負の側面にどうアプローチするか"
       ],
-      "struggle": [
+      "solution": [
+        "シンプルかつミニマムなレイアウト",
+        "情緒的希薄さをカバーしつつ、個性を打ち出すために色数を絞ったパーソナルカラーを使う",
+        "自分がユーザー視点で感じる｢気持ちよさ｣をCSS AnimationやJavaScriptの組み合わせで表現する"
+      ]
+    },
+
+    "lookback": {
+      "duration": [
+        { "name": "IA", "hours": 1.5 },
+        { "name": "Design", "hours": 2.0 },
+        { "name": "Coding", "hours": 12.0 },
+        { "name": "Refinement", "hours": 15.0 }
+      ],
+      "difficulties": [
         "当初バニラ想定だったため命名規則のバラつきが生じ、管理･確認に時間を取られたこと",
         "カルーセルとモーダルを組み合わせたことで実装の複雑さやUXの調整に想定以上の工数がかかったこと",
         "小規模制作と考えていた為、最初はCSSはバニラで書いていたのですが、モーダル管理の為にCSSが肥大化したためSCSSを導入しました"
@@ -49,8 +58,8 @@
       ]
     },
 
-    "tech & period": {
-      "language": [
+    "toolkit": {
+      "languages": [
         "HTML",
         "CSS (+SCSS)",
         "JavaScript (+Splide)"
@@ -61,27 +70,21 @@
         "VSCode (+SFTP)",
         "Git",
         "GitHub",
-        "Notion",
-        "Eagle",
         "oklch.com",
         "cwebp (.webp)",
-        "Firefox (Grid Inspector)"
+        "Firefox (Grid Inspector)",
+        "(Notion)",
+        "(Eagle)"
       ],
       "fonts": [
         "Jost",
         "Zen Kaku Gothic New"
       ],
       "assets": [
+        "ICOOON MONO",
         "MockUPhone",
         "Paper-co (Texture)",
-        "ICOOON MONO",
         "GitHub (Logo)"
-      ],
-      "period": [
-        { "name": "IA", "hours": 1.5 },
-        { "name": "Design", "hours": 2.0 },
-        { "name": "Coding", "hours": 12.0 },
-        { "name": "Refinement", "hours": 15.0 }
       ]
     }
   },

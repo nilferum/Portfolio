@@ -77,7 +77,7 @@ function handleOpenOverlay() {
     detail.classList.add('is-open');
     detail.setAttribute('aria-hidden', 'false');
     document.addEventListener('keydown', handleTrapFocus);
-    detail.removeAttribute('inert'); 
+    detail.removeAttribute('inert');
 }
 
 function handleCloseOverlay() {
@@ -88,12 +88,12 @@ function handleCloseOverlay() {
     delete detail.dataset.direction;
     isSwitching = false;
     workpanelButton.focus();                                                                // detail内部にfocusが残るのを防ぐため
-    detail.setAttribute('inert', ''); 
+    detail.setAttribute('inert', '');
 }
 
 function handleTrapFocus(e) {                                                               // Overlay内外でFocusを分離させるため
     if (e.key !== 'Tab') return;
-    
+
     const focusable =   detail.querySelectorAll('a, button');
     const first     =   focusable[0];
     const last      =   focusable[focusable.length - 1];
@@ -141,7 +141,7 @@ function handleCopyMail() {
         mail.classList.remove('is-copied');
         setTimeout(() => {
             mail.dataset.label = 'Click to copy';
-        }, 200);    
+        }, 200);
     }, 700);
 }
 

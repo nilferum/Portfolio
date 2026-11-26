@@ -18,7 +18,7 @@ function renderProse(key, texts) {
 function renderTags(key, tags) {
     const items = tags.map(tag => {
         const open = tag.lastIndexOf('(');
-        if (open <= 0 || !tag.endsWith(')')) return el('li', '', tag);
+        if (open < 0 || !tag.endsWith(')')) return el('li', '', tag);
 
         return el('li', '',                                 // 末尾の括弧だけを span で包む
             tag.slice(0, open),
@@ -45,11 +45,11 @@ function renderTableHours(key, rows) {
 }
 
 const renderers = {
-    language:   renderTags,
+    languages:  renderTags,
     tools:      renderTags,
     fonts:      renderTags,
     assets:     renderTags,
-    period:     renderTableHours,
+    duration:   renderTableHours,
 };
 
 function renderCell(key, value) {
