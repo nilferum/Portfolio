@@ -674,6 +674,72 @@
   .info-links .info-link img {
     height: 2rem;
   }
+  .info-data {
+    margin-left: 2em;
+    line-height: 1.75;
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 876px) {
+    .info-data {
+      margin-left: 1em;
+    }
+  }
+  .info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  .info-tags li {
+    padding: 0.125em 0.75em;
+    border: 1px solid oklch(31% 0 0deg / 0.25);
+    border-radius: 0.25rem;
+    font-family: "Jost", "Zen Kaku Gothic New", sans-serif;
+    font-size: 0.875em;
+    letter-spacing: 0;
+  }
+  .info-tags__sub {
+    opacity: 0.5;
+  }
+  .info-table--hours {
+    --number-width: 4ch;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    row-gap: 0.125em;
+  }
+  .info-table--hours dt {
+    display: flex;
+    align-items: center;
+    font-family: "Jost", "Zen Kaku Gothic New", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .info-table--hours dt::after {
+    content: "";
+    flex: 1;
+    min-width: 3ch;
+    height: 1px;
+    margin-left: 6ch;
+    margin-right: 1ch;
+    background-color: currentColor;
+    opacity: 0.25;
+  }
+  .info-table--hours dd {
+    display: grid;
+    grid-template-columns: var(--number-width) max-content;
+    align-items: baseline;
+    font-family: "Jost", sans-serif;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .info-table--hours dd::after {
+    content: "[h]";
+    margin-left: 0.375em;
+    font-size: 0.75em;
+    opacity: 0.75;
+  }
+  .info-number__frac {
+    opacity: 0.825;
+  }
   @media (max-width: 876px) {
     .info-group {
       gap: 8px;
