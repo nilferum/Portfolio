@@ -1,149 +1,89 @@
 {
   "id": "work-02",
   "title": "Sipsprs",
-  "category": [
-    "Direct",
-    "Design",
-    "Coding"
-  ],
+  "category": ["Direct", "Design", "Coding"],
   "description": "脱･食べログをコンセプトに、\n架空のバーのサイトを制作しました。",
   "image": "images/02-sipsprs.webp",
   "url": "https://adachigeorge.com/sipsprs/",
-  "overview": {
-    "target": [
-      ""
-    ],
-    "objective": [
-      ""
-    ],
-    "approach": [
-      ""
-    ],
-    "therefore": [
-      ""
-    ]
-  },
-  "highlight": {
-    "my reckon": [
-      ""
-    ],
-    "challenge": [
-      ""
-    ],
-    "struggle": [
-      ""
-    ],
-    "reflection": [
-      ""
-    ]
-  },
-  "tech": {
-    "template": {
-      "name": "",
-      "usage": "",
-      "note": ""
+
+  "detail": {
+    "overview": {
+      "audience": [],
+      "objective": [],
+      "approach": []
     },
-    "language": [
-      {
-        "name": "HTML",
-        "usage": "",
-        "note": ""
-      },
-      {
-        "name": "CSS (+SCSS)",
-        "usage": "",
-        "note": ""
-      },
-      {
-        "name": "JavaScript (+GSAP / ScrollTrigger)",
-        "usage": "",
-        "note": ""
-      }
-    ],
-    "tool": [
-      {
-        "name": "Photoshop",
-        "usage": "アセット作成",
-        "note": ""
-      },
-      {
-        "name": "Fonttools (Python)",
-        "usage": "フォントサブセット化",
-        "note": "ワンライナーで呼び出し"
-      },
-      {
-        "name": "Crushee",
-        "usage": "Webp化",
-        "note": ""
-      },
-      {
-        "name": "VSCode",
-        "usage": "コーディング",
-        "note": ""
-      },
-      {
-        "name": "Git, GitHub",
-        "usage": "バージョン･Issue管理",
-        "note": ""
-      },
-      {
-        "name": "Notion, Eagle",
-        "usage": "進捗･アセット管理 + SS",
-        "note": ""
-      },
-      {
-        "name": "Firefox ED DevTool",
-        "usage": "Grid調整",
-        "note": ""
-      }
-    ],
-    "font": [
-      {
-        "name": "Shippori Mincho B1",
-        "usage": "本文(日本語)",
-        "note": "セルフホスト。Fonttools でサブセット化した woff2、ライセンス表記を fonts/ に同梱"
-      },
-      {
-        "name": "Cormorant Garamond",
-        "usage": "英字の本文・リード",
-        "note": "Google Fonts。フォールバックに Garamond"
-      },
-      {
-        "name": "Marcellus",
-        "usage": "サイトタイトル・見出し・数字",
-        "note": "Google Fonts。数字幅やディセンダーに合わせた錯視調整あり"
-      }
-    ]
+
+    "highlights": {
+      "my reckon": [],
+      "challenge": [],
+      "solution": []
+    },
+
+    "lookback": {
+      "duration": [
+        { "name": "IA", "hours": 0 },
+        { "name": "Design", "hours": 0 },
+        { "name": "Coding", "hours": 0 },
+        { "name": "Refinement", "hours": 0 }
+      ],
+      "difficulties": [],
+      "reflection": []
+    },
+
+    "toolkit": {
+      "languages": [
+        "HTML",
+        "CSS (+SCSS)",
+        "JavaScript",
+        "Python (Fonttools)"
+      ],
+      "tools": [
+        "Photoshop",
+        "Firefly",
+        "Figma",
+        "VSCode (+SFTP)",
+        "Git",
+        "GitHub",
+        "oklch.com",
+        "Min-Max-Value Interpolation",
+        "cwebp (.webp)",
+        "Firefox (Grid Inspector)",
+        "(Notion)",
+        "(Eagle)"
+      ],
+      "fonts": [
+        "Cormorant Garamond",
+        "Marcellus",
+        "Shippori Mincho B1"
+      ],
+      "assets": [
+        "Unsplash",
+        "Instagram (Logo)"
+      ]
+    }
   },
-  "sources": [
-    {
-      "name": "",
-      "usage": "",
-      "url": "",
-      "note": ""
-    }
-  ],
-  "period": [
-    {
-      "name": "",
-      "time": ""
-    }
-  ],
+
   "links": [
     {
       "label": "Demosite",
       "href": "https://adachigeorge.com/sipsprs",
-      "icon": "images/html.svg"
+      "icon": "images/html.svg",
+      "alt": "demo",
+      "ariaLabel": "Open Demo"
     },
     {
       "label": "GitHub",
       "href": "https://github.com/nilferum/sipsprs",
-      "icon": "images/github.svg"
+      "icon": "images/github.svg",
+      "alt": "GitHub Repository",
+      "ariaLabel": "Open GitHub"
     },
     {
       "label": "Lighthouse Score",
       "href": "https://pagespeed.web.dev/analysis?url=https://adachigeorge.com/sipsprs/",
-      "icon": "images/lighthouse.svg"
+      "icon": "images/lighthouse.svg",
+      "alt": "Lighthouse score",
+      "ariaLabel": "Open Lighthouse Analysis"
     }
   ]
 }

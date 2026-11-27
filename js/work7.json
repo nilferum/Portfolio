@@ -1,108 +1,46 @@
 {
   "id": "work-07",
-  "title": "rotated dotty FONT",
-  "category": [
-    "Direct",
-    "Design"
-  ],
+  "title": "Dotty",
+  "category": ["Direct", "Design"],
   "description": "",
   "image": "images/work7.webp",
   "url": "",
-  "overview": {
-    "target": [
-      ""
-    ],
-    "objective": [
-      ""
-    ],
-    "approach": [
-      ""
-    ],
-    "therefore": [
-      ""
-    ]
-  },
-  "highlight": {
-    "my reckon": [
-      ""
-    ],
-    "challenge": [
-      ""
-    ],
-    "struggle": [
-      ""
-    ],
-    "reflection": [
-      ""
-    ]
-  },
-  "tech": {
-    "template": {
-      "name": "",
-      "usage": "",
-      "note": ""
+
+  "detail": {
+    "overview": {
+      "audience": [],
+      "objective": [],
+      "approach": []
     },
-    "language": [
-      {
-        "name": "",
-        "usage": "",
-        "note": ""
-      }
-    ],
-    "tool": [
-      {
-        "name": "",
-        "usage": "",
-        "note": ""
-      }
-    ],
-    "font": [
-      {
-        "name": "Atkinson Hyperlegible",
-        "usage": "",
-        "note": "Google Fonts"
-      },
-      {
-        "name": "Audiowide",
-        "usage": "",
-        "note": "Google Fonts"
-      },
-      {
-        "name": "Bitcount Prop Double",
-        "usage": "",
-        "note": "Google Fonts"
-      }
-    ]
+
+    "highlights": {
+      "my reckon": [],
+      "challenge": [],
+      "solution": []
+    },
+
+    "lookback": {
+      "duration": [
+        { "name": "IA", "hours": 0 },
+        { "name": "Design", "hours": 0 },
+        { "name": "Coding", "hours": 0 },
+        { "name": "Refinement", "hours": 0 }
+      ],
+      "difficulties": [],
+      "reflection": []
+    },
+
+    "toolkit": {
+      "tools": [
+        "Figma"
+      ],
+      "fonts": [
+        "Atkinson Hyperlegible",
+        "Audiowide",
+        "Bitcount Prop Double"
+      ]
+    }
   },
-  "sources": [
-    {
-      "name": "",
-      "usage": "",
-      "url": "",
-      "note": ""
-    }
-  ],
-  "period": [
-    {
-      "name": "",
-      "time": ""
-    }
-  ],
-  "links": [
-    {
-      "label": "Demosite",
-      "href": "",
-      "icon": "images/html.svg"
-    },
-    {
-      "label": "GitHub",
-      "href": "",
-      "icon": "images/github.svg"
-    },
-    {
-      "label": "Lighthouse Score",
-      "href": "",
-      "icon": "images/lighthouse.svg"
-    }
-  ]
+
+  "links": []
 }

@@ -1,103 +1,67 @@
 {
   "id": "work-03",
-  "title": "宮原精磁",
-  "category": [
-    "Direct",
-    "Design"
-  ],
+  "title": "Miyahara",
+  "category": ["Direct", "Design"],
   "description": "",
   "image": "",
   "url": "",
-  "overview": {
-    "target": [
-      ""
-    ],
-    "objective": [
-      ""
-    ],
-    "approach": [
-      ""
-    ],
-    "therefore": [
-      ""
-    ]
-  },
-  "highlight": {
-    "my reckon": [
-      ""
-    ],
-    "challenge": [
-      ""
-    ],
-    "struggle": [
-      ""
-    ],
-    "reflection": [
-      ""
-    ]
-  },
-  "tech": {
-    "template": {
-      "name": "",
-      "usage": "",
-      "note": ""
+
+  "detail": {
+    "overview": {
+      "audience": [],
+      "objective": [],
+      "approach": []
     },
-    "language": [
-      {
-        "name": "",
-        "usage": "",
-        "note": ""
-      }
-    ],
-    "tool": [
-      {
-        "name": "Figma",
-        "usage": "",
-        "note": ""
-      }
-    ],
-    "font": [
-      {
-        "name": "Space Grotesk",
-        "usage": "",
-        "note": "Google Fonts"
-      },
-      {
-        "name": "Helvetica / Noto Sans JP / Hiragino Kaku Gothic ProN",
-        "usage": "システムフォント",
-        "note": "Noto Sans JP は Google Fonts"
-      }
-    ]
+
+    "highlights": {
+      "my reckon": [],
+      "challenge": [],
+      "solution": []
+    },
+
+    "lookback": {
+      "duration": [
+        { "name": "IA", "hours": 0 },
+        { "name": "Design", "hours": 0 },
+        { "name": "Coding", "hours": 0 },
+        { "name": "Refinement", "hours": 0 }
+      ],
+      "difficulties": [],
+      "reflection": []
+    },
+
+    "toolkit": {
+      "tools": [
+        "Figma",
+        "Google Spreadsheet",
+        "(Eagle)"
+      ],
+      "fonts": [
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Noto Sans JP",
+        "Space Grotesk"
+      ],
+      "assets": [
+        "Unsplash"
+      ]
+    }
   },
-  "sources": [
-    {
-      "name": "",
-      "usage": "",
-      "url": "",
-      "note": ""
-    }
-  ],
-  "period": [
-    {
-      "name": "",
-      "time": ""
-    }
-  ],
+
   "links": [
     {
-      "label": "Demosite",
-      "href": "",
-      "icon": "images/html.svg"
+      "label": "Figma",
+      "href": "https://www.figma.com/design/wpo92J1UnwMmFOGv9448cC/%E5%AE%AE%E5%8E%9F%E7%B2%BE%E7%A3%81?node-id=1380-1074&t=nhmipLPudhkAc9mb-1",
+      "icon": "images/layer.svg",
+      "alt": "Figma design file",
+      "ariaLabel": "Open Figma"
     },
     {
-      "label": "GitHub",
-      "href": "",
-      "icon": "images/github.svg"
-    },
-    {
-      "label": "Lighthouse Score",
-      "href": "",
-      "icon": "images/lighthouse.svg"
+      "label": "Google Spreadsheet",
+      "href": "https://docs.google.com/spreadsheets/d/1xJyZ1v7rGAunQ6ujLW_dGiP6wp2EBV6aoEDvlEeZGnQ/edit?usp=sharing",
+      "icon": "images/function.svg",
+      "alt": "Google Spreadsheet",
+      "ariaLabel": "Open Google Spreadsheet"
     }
   ]
 }
