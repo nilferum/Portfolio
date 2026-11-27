@@ -1,11 +1,11 @@
-import work1 from './work1.json?v=20261127' with { type: 'json' };
-import work2 from './work2.json?v=20261127' with { type: 'json' };
-import work3 from './work3.json?v=20261127' with { type: 'json' };
-import work4 from './work4.json?v=20261127' with { type: 'json' };
-import work5 from './work5.json?v=20261127' with { type: 'json' };
-import work6 from './work6.json?v=20261127' with { type: 'json' };
-import work7 from './work7.json?v=20261127' with { type: 'json' };
-import { renderDetail } from './render.js?v=20261127';
+import work1 from './work1.json?v=27' with { type: 'json' };
+import work2 from './work2.json?v=27' with { type: 'json' };
+import work3 from './work3.json?v=27' with { type: 'json' };
+import work4 from './work4.json?v=27' with { type: 'json' };
+import work5 from './work5.json?v=27' with { type: 'json' };
+import work6 from './work6.json?v=27' with { type: 'json' };
+import work7 from './work7.json?v=27' with { type: 'json' };
+import { renderDetail } from './render.js?v=27';
 
 const worksData         = [work1, work2, work3, work4, work5, work6, work7];
 const mail              = document.querySelector('.mail');
@@ -39,8 +39,7 @@ function updateContent(index) {
     detailTitle.textContent     = data.title;
     workpanelLabels.innerHTML   = '';
 
-    if (data.detail)    detailContents.replaceChildren(...renderDetail(data));
-    else                detailContents.innerHTML = data.infoHTML ?? '';                     // json化していない作品(work2, work3)用。全件移したら消す
+    detailContents.replaceChildren(...renderDetail(data));
 
     data.category.forEach(cat => {
         const li = document.createElement('li');

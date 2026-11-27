@@ -21,10 +21,10 @@
 
     "lookback": {
       "duration": [
-        { "name": "IA", "hours": 0 },
-        { "name": "Design", "hours": 0 },
-        { "name": "Coding", "hours": 0 },
-        { "name": "Refinement", "hours": 0 }
+        { "name": "IA", "hours": 12.0 },
+        { "name": "Design", "hours": 7.8 },
+        { "name": "Coding", "hours": 20.5 },
+        { "name": "Refinement", "hours": 3.0 }
       ],
       "difficulties": [],
       "reflection": []

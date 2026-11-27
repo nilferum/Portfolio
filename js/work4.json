@@ -1,6 +1,6 @@
 {
   "id": "work-04",
-  "title": "que-sais-je",
+  "title": "Blog",
   "category": ["Direct", "Design", "Coding"],
   "description": "",
   "image": "",
@@ -21,10 +21,7 @@
 
     "lookback": {
       "duration": [
-        { "name": "IA", "hours": 0 },
-        { "name": "Design", "hours": 0 },
-        { "name": "Coding", "hours": 0 },
-        { "name": "Refinement", "hours": 0 }
+        { "name": "Coding + Design", "hours": 5.0 }
       ],
       "difficulties": [],
       "reflection": []
