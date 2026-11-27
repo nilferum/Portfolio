@@ -1,11 +1,11 @@
-import work1 from './work1.json?v=27' with { type: 'json' };
-import work2 from './work2.json?v=27' with { type: 'json' };
-import work3 from './work3.json?v=27' with { type: 'json' };
-import work4 from './work4.json?v=27' with { type: 'json' };
-import work5 from './work5.json?v=27' with { type: 'json' };
-import work6 from './work6.json?v=27' with { type: 'json' };
-import work7 from './work7.json?v=27' with { type: 'json' };
-import { renderDetail } from './render.js?v=27';
+import work1 from '../data/work1.json?v=28' with { type: 'json' };
+import work2 from '../data/work2.json?v=28' with { type: 'json' };
+import work3 from '../data/work3.json?v=28' with { type: 'json' };
+import work4 from '../data/work4.json?v=28' with { type: 'json' };
+import work5 from '../data/work5.json?v=28' with { type: 'json' };
+import work6 from '../data/work6.json?v=28' with { type: 'json' };
+import work7 from '../data/work7.json?v=28' with { type: 'json' };
+import { renderDetail } from './render.js?v=28';
 
 const worksData         = [work1, work2, work3, work4, work5, work6, work7];
 const mail              = document.querySelector('.mail');

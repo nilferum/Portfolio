@@ -1,0 +1,124 @@
+{
+  "id": "work-02",
+  "title": "Sipsprs",
+  "category": ["Direct", "Design", "Coding"],
+  "description": "脱･食べログをコンセプトに、\n架空のバーのサイトを制作しました。",
+  "image": "images/02-sipsprs.webp",
+  "url": "https://adachigeorge.com/sipsprs/",
+
+  "detail": {
+    "overview": {
+      "audience": [
+        "20代カップル(予約･SNSシェア訴求)"
+      ],
+      "objective": [
+        "維持費が高額な予約サービスからの脱却",
+        "リピーター確保"
+      ],
+      "approach": [
+        "ブランドイメージを構築できる自店サイト",
+        "競合他店との差別化(ヴィジュアル面)",
+        "モダンさと高級感を両立"
+      ]
+    },
+
+    "highlights": {
+      "my reckon": [
+        "｢具体的な経営課題に対してどのようなデザインアプローチを取るか、その考え方を見てもらう｣という点から、実在しそうな飲食店やバーの設定を考えるところから始めました。",
+        "梅田の20席程度、回転率が高めかつ客層が夜間に集中する店、予約サービスからの予約率を50%と見積もるとプラットフォーマーに対して支払う金額はおおよそ8～9万円/月程度、純利益の15%程度を占めることになる、とフェルミ推定的に求めつつ、そこからサイト制作費としてのイニシャルコストは10～15万円程度なら飲食店であっても納得感を持って出していただきやすいと想定しつつ、以下に挙げるような飲食店が抱えがちな経営課題も設定しました。"
+      ],
+      "issues": [
+        "SNS露出自体はうまく行っているので客数自体は多いが、一見のお客様が多く常連客は根付いていない。そのため将来的な経営維持に懸念を持っている。",
+        "従業員数が少ないため、単純な客数増加はキャパシティをオーバーするため売上には繋がらないことが見込まれる。"
+      ],
+      "remedy": [
+        "｢行ってよかった｣｢また来たい｣と思わせる雰囲気を期待させる",
+        "一人客よりカップル客に向けて訴求することで客単価の向上を図る"
+      ],
+      "challenge": [
+        "想定されるペルソナの行動パターンを踏まえ、仕事帰りの電車などからアクセスを想定し、モバイル回線からでもストレスなく閲覧できるサイト作り",
+        "｢平均よりやや高価｣というトーンと上記からくる制約を両立する、モダンながら高級感を感じさせるデザイン",
+        "フォントの雰囲気や使い方、挑戦的なレイアウトで他のサイトとの印象の差別化"
+      ],
+      "solution": [
+        "予約ボタンは主張を抑えながらも、どこからでも押せるレイアウト",
+        "フォントのサブセット化、画像の容量削減",
+        "錯視調整、約物の詰めなどのフォント調整のディテール",
+        "スイスデザイン風の余白や整列感を作るレイアウト"
+      ]
+    },
+
+    "lookback": {
+      "duration": [
+        { "name": "IA", "hours": 12.0 },
+        { "name": "Design", "hours": 7.8 },
+        { "name": "Coding", "hours": 20.5 },
+        { "name": "Refinement", "hours": 3.0 }
+      ],
+      "difficulties": [
+        "最初はアニメーション(GSAPなど)の動きで高級感を演出しようと考えていましたが、実際にコーディングを進めているうちにレイアウトシフトが発生し、構造的に解決し得ないと判断して一部セクションをデザインからやり直すことになったこと",
+        "ボックス自体は揃っているのに見た目では揃って見えないという問題の解決に時間を取られたこと"
+      ],
+      "reflection": [
+        "GoogleのLighthouseスコアはモバイルで全項目90点以上で、やりたいデザインをパフォーマンスを保ったまま実現するという狙いは達成できたこと",
+        "JavaScriptを利用した動きが、そもそもこのサイトの構造で実現可能なのかという視点がデザイン段階で欠けていたこと"
+      ]
+    },
+
+    "toolkit": {
+      "languages": [
+        "HTML",
+        "CSS (+SCSS)",
+        "JavaScript",
+        "Python (Fonttools)"
+      ],
+      "tools": [
+        "Photoshop",
+        "Firefly",
+        "Figma",
+        "VSCode (+SFTP)",
+        "Git",
+        "GitHub",
+        "oklch.com",
+        "Min-Max-Value Interpolation",
+        "cwebp (.webp)",
+        "Firefox (Grid Inspector)",
+        "(Notion)",
+        "(Eagle)"
+      ],
+      "fonts": [
+        "Cormorant Garamond",
+        "Marcellus",
+        "Shippori Mincho B1"
+      ],
+      "assets": [
+        "Unsplash",
+        "Instagram (Logo)"
+      ]
+    }
+  },
+
+  "links": [
+    {
+      "label": "Demosite",
+      "href": "https://adachigeorge.com/sipsprs",
+      "icon": "images/html.svg",
+      "alt": "demo",
+      "ariaLabel": "Open Demo"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/nilferum/sipsprs",
+      "icon": "images/github.svg",
+      "alt": "GitHub Repository",
+      "ariaLabel": "Open GitHub"
+    },
+    {
+      "label": "Lighthouse Score",
+      "href": "https://pagespeed.web.dev/analysis?url=https://adachigeorge.com/sipsprs/",
+      "icon": "images/lighthouse.svg",
+      "alt": "Lighthouse score",
+      "ariaLabel": "Open Lighthouse Analysis"
+    }
+  ]
+}
