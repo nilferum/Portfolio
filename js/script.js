@@ -1,11 +1,11 @@
-import work1 from '../data/work1.json?v=29' with { type: 'json' };
-import work2 from '../data/work2.json?v=29' with { type: 'json' };
-import work3 from '../data/work3.json?v=29' with { type: 'json' };
-import work4 from '../data/work4.json?v=29' with { type: 'json' };
-import work5 from '../data/work5.json?v=29' with { type: 'json' };
-import work6 from '../data/work6.json?v=29' with { type: 'json' };
-import work7 from '../data/work7.json?v=29' with { type: 'json' };
-import { renderDetail } from './render.js?v=29';
+import work1 from '../data/work1.json?v=30' with { type: 'json' };
+import work2 from '../data/work2.json?v=30' with { type: 'json' };
+import work3 from '../data/work3.json?v=30' with { type: 'json' };
+import work4 from '../data/work4.json?v=30' with { type: 'json' };
+import work5 from '../data/work5.json?v=30' with { type: 'json' };
+import work6 from '../data/work6.json?v=30' with { type: 'json' };
+import work7 from '../data/work7.json?v=30' with { type: 'json' };
+import { renderDetail } from './render.js?v=30';
 
 const worksData         = [work1, work2, work3, work4, work5, work6, work7];
 const mail              = document.querySelector('.mail');
@@ -22,16 +22,36 @@ const leftkeyTooltip    = document.querySelector('.leftkey');
 const rightkeyTooltip   = document.querySelector('.rightkey');
 const scrim             = document.querySelector('.scrim');
 
+const mailAddress       = ['mail', 'adachigeorge.com'].join('@');
+
 const prevKeys          = ['a', 'q', 'k', 'ArrowLeft'];
 const nextKeys          = ['d', 'e', 'j', 'ArrowRight'];
 const toggleKeys        = ['w', 's', 'o', 'f'];
 
-const TH_SWIPE          = window.innerWidth * 0.25
+const events = [
+//  targets             events          handlers                    options
+    [document,          'keydown',      handleKeydown],
+    [document,          'touchstart',   handleTouchStart,          { passive: true }],
+    [document,          'touchend',     handleSwipe],
+    [mail,              'click',        handleCopyMail],
+    [list,              'click',        handleOpenOverlay],
+    [workpanelButton,   'click',        handleOpenOverlay],
+    [detailButton,      'click',        handleCloseOverlay],
+    [leftkeyTooltip,    'click',        goPrev],
+    [rightkeyTooltip,   'click',        goNext],
+    [scrim,             'click',        handleCloseOverlay],
+];
+
+const swipeThreshold    = window.innerWidth * 0.25;     // スワイプと判定する閾値。右辺以上の動きをスワイプと判定する
 let touchStartX         = 0;
-let isSwitching         = false;
+
+let isSwitching         = false;                        // falseのときだけswitchContent()を実行可能
+let shownIndex          = 0;                            // 自作したJSとSplideのindexのズレを検出するため
+let switchController    = null;                         // ブラウザのAbortControllerを入れるための変数。CSS Animation中にEscしたときに生き残ったイベントリスナーを殺すため
 
 function updateContent(index) {
     const data = worksData[index];
+    shownIndex = index;
 
     detailContents.scrollTop    = 0;
     workpanelTitle.textContent  = data.title;
@@ -48,9 +68,11 @@ function updateContent(index) {
     });
 }
 
-function switchContent(index) {
+function switchContent() {
     if (isSwitching) return;
     isSwitching = true;
+    switchController = new AbortController();
+    const options = { once: true, signal: switchController.signal };
 
     detail.classList.add('is-switching-out');
 
@@ -60,10 +82,14 @@ function switchContent(index) {
 
         detail.addEventListener('animationend', () => {
             detail.classList.remove('is-switching-in');
-            delete detail.dataset.direction;
             isSwitching = false;
-        }, { once: true });
-    }, { once: true });
+            if (shownIndex !== splide.index) {
+                requestAnimationFrame(() => switchContent());
+                return;
+            }
+            delete detail.dataset.direction;
+        }, options);
+    }, options);
 }
 
 function goPrev() {
@@ -90,6 +116,8 @@ function handleCloseOverlay() {
     document.removeEventListener('keydown', handleTrapFocus);
     delete detail.dataset.direction;
     isSwitching = false;
+    switchController?.abort();                                                              // nullでなければabortする
+    if (shownIndex !== splide.index) updateContent(splide.index);
     workpanelButton.focus();                                                                // detail内部にfocusが残るのを防ぐため
     detail.setAttribute('inert', '');
 }
@@ -131,13 +159,12 @@ function handleTouchStart(e) {
 
 function handleSwipe(e) {
     const diff = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(diff) < TH_SWIPE) return;
+    if (Math.abs(diff) < swipeThreshold) return;
     diff < 0 ? goNext() : goPrev();
 }
 
 function handleCopyMail() {
-    const addr = ['mail', 'adachigeorge.com'].join('@');
-    navigator.clipboard.writeText(addr);
+    navigator.clipboard.writeText(mailAddress);
     mail.dataset.label = 'Copied!';
     mail.classList.add('is-copied');
     setTimeout(() => {
@@ -164,24 +191,10 @@ const splide = new Splide('.splide', {
     drag:       false,
 }).mount();
 
-splide.on('move', () => { switchContent(splide.index); });
-
-const events = [
-//  targets             events          handlers                    options
-    [document,          'keydown',      handleKeydown],
-    [document,          'touchstart',   handleTouchStart,          { passive: true }],
-    [document,          'touchend',     handleSwipe],
-    [mail,              'click',        handleCopyMail],
-    [list,              'click',        handleOpenOverlay],
-    [workpanelButton,   'click',        handleOpenOverlay],
-    [detailButton,      'click',        handleCloseOverlay],
-    [leftkeyTooltip,    'click',        goPrev],
-    [rightkeyTooltip,   'click',        goNext],
-    [scrim,             'click',        handleCloseOverlay],
-];
+splide.on('move', () => { switchContent(); });
 
 events.forEach(([target, event, handler, option]) => target.addEventListener(event, handler, option));
 
 if (!CSS.supports('animation-timeline', 'scroll()')) {
-    console.log('このサイトではArc/Chrome/EdgeなどBlinkブラウザ、もしくはWebKitブラウザからの閲覧を強くおすすめします。\nCan I use animation-timeline ?(https://caniuse.com/?search=animation-timeline)より。');
+    console.log('このサイトではArc/Chrome/EdgeなどBlinkブラウザ、もしくはWebKitブラウザからの閲覧を強くおすすめします。\nCan I use animation-timeline ?(https://caniuse.com/?search=animation-timeline)');
 }
