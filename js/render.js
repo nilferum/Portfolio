@@ -7,6 +7,13 @@ const renderers = {
                                         // 表にない項目はrenderProseとして処理される。
 };
 
+function el(tag, className, ...children) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    node.append(...children);
+    return node;
+}
+
 // ============================================================
 // Prose, Tags, Table共通
 // ============================================================
@@ -66,7 +73,7 @@ function renderTableHours(key, rows) {
 
         table.append(
             el('dt', '', row.name),
-            // dd(時間)全体をinfo-numberで囲み、小数部分(60分未満)はinfo-number__fracで囲む。CSSスタイリング用。単位記号はCSSのpseudo要素で担当。
+            // dd(時間)全体をinfo-numberで囲み、小数部分(60分未満)はinfo-number__fracで囲む。CSSスタイリング用。単位記号はCSSのpseudo要素で担当
             el('dd', '', el('span', 'info-number', integer, el('span', 'info-number__frac', `.${fraction}`))),
         );
     });
@@ -88,7 +95,7 @@ function renderLinks(links) {
         a.target            = '_blank';                 // 新しいウィンドウで開く
         a.rel               = 'noopener noreferrer';
         a.ariaLabel         = link.ariaLabel;
-        a.dataset.tooltip   = link.label;               // Tooltipに表示される文言。HTMLアイコンなら"Demosite"、GitHubアイコンなら"GitHub"など。
+        a.dataset.tooltip   = link.label;               // Tooltipに表示される文言。HTMLアイコンなら"Demosite"、GitHubアイコンなら"GitHub"など
         img.src             = link.icon;
         img.alt             = link.alt;
 
@@ -103,19 +110,14 @@ function renderLinks(links) {
 // General
 // ============================================================
 
-function el(tag, className, ...children) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    node.append(...children);
-    return node;
-}
-
 // 上で作ったデータセルをグルーピングし、縦書きのheadingと一緒にセットにする
+// div.info-group > h3.info-heading + n-CELLS
 function renderGroup(heading, cells) {
     const body = el('div', 'info-body', ...Object.entries(cells).map(([key, value]) => renderCell(key, value)));
     return el('div', 'info-group', el('h3', 'info-heading', heading), body);
 }
 
+// 上記のGroupを更に束ねてscriptに渡す。nodesはnodeと役割が異なることに注意
 export function renderDetail(work) {
     const nodes = Object.entries(work.detail).map(([heading, cells]) => renderGroup(heading, cells));
     if (work.links?.length) nodes.push(renderLinks(work.links));
